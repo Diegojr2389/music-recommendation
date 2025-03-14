@@ -3,17 +3,49 @@
   padding: 20px;
 }
 
-input {
-  margin: 5px;
-  padding: 5px;
+.App h1 {
+  color: #333;
 }
 
-button {
-  margin: 5px;
-  padding: 5px 10px;
+.App h2 {
+  color: #555;
 }
 
-ul {
+.App ul {
   list-style-type: none;
   padding: 0;
+}
+
+.App li {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.App input {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.App button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.App button:hover {
+  background-color: #0056b3;
+}
+
+/* Style for Last.fm label and fetch message */
+.App li span {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.App p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #666;
 }
