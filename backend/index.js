@@ -8,14 +8,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
 const dbConfig = {
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
+  host: process.env.RDS_HOST,
+  user: process.env.RDS_USER, 
+  password: process.env.RDS_PASSWORD, 
+  database: process.env.RDS_DATABASE  
 };
 
 const pool = mysql.createPool(dbConfig);
+console.log('Connected to RDS with config:', dbConfig);
 
 const LASTFM_API_KEY = process.env.LASTFM_API_KEY;
 const LASTFM_BASE_URL = 'http://ws.audioscrobbler.com/2.0/';
@@ -35,7 +37,7 @@ app.get('/fetch-lastfm', async (req, res) => {
   try {
     console.log('Fetching Last.fm top tracks...');
     const response = await axios.get(`${LASTFM_BASE_URL}`, {
-      params: { method: 'chart.getTopTracks', api_key: LASTFM_API_KEY, format: 'json', limit: 51 }
+      params: { method: 'chart.getTopTracks', api_key: LASTFM_API_KEY, format: 'json', limit: 50 }
     });
     const tracks = response.data.tracks.track;
 
@@ -406,12 +408,37 @@ app.get('/playlist-engagement/:U_Name', async (req, res) => {
 
 app.get('/search-songs', async (req, res) => {
   const { mood, minTempo, maxTempo } = req.query;
+  console.log('Received search params:', { mood, minTempo, maxTempo });
+  if (!mood || !minTempo || !maxTempo) {
+    return res.status(400).json({ error: 'Mood, minTempo, and maxTempo are required' });
+  }
+  const minTempoNum = parseInt(minTempo);
+  const maxTempoNum = parseInt(maxTempo);
+  if (isNaN(minTempoNum) || isNaN(maxTempoNum)) {
+    return res.status(400).json({ error: 'minTempo and maxTempo must be valid numbers' });
+  }
   try {
-    const [rows] = await pool.query(
-      'SELECT S.SongTitle, A.A_Name, S.S_Duration FROM SONG S JOIN ARTIST A ON S.Artist_ID = A.Artist_ID JOIN SONG_ALBUM SA ON S.Song_ID = SA.Song_ID AND S.Artist_ID = SA.Artist_ID JOIN ALBUM AL ON SA.AlbumName = AL.AlbumName AND SA.Artist_ID = AL.Artist_ID WHERE S.Mood = ? AND S.Tempo BETWEEN ? AND ?',
-      [mood, minTempo, maxTempo]
-    );
-    res.json(rows);
+    const query = `SELECT S.SongTitle, A.A_Name, S.S_Duration
+                   FROM SONG S
+                   JOIN ARTIST A ON S.Artist_ID = A.Artist_ID
+                   WHERE S.Mood = ? AND S.Tempo BETWEEN ? AND ?`;
+    console.log('Executing query:', query, [mood, minTempoNum, maxTempoNum]);
+    const [rows] = await pool.query(query, [mood, minTempoNum, maxTempoNum]);
+    if (rows.length === 0) {
+      console.log('No exact matches, trying broader range or null checks');
+      const [fallbackRows] = await pool.query(
+        `SELECT S.SongTitle, A.A_Name, S.S_Duration
+         FROM SONG S
+         JOIN ARTIST A ON S.Artist_ID = A.Artist_ID
+         WHERE S.Mood = ? AND (S.Tempo IS NULL OR S.Tempo BETWEEN ? AND ?)`,
+        [mood, minTempoNum - 20, maxTempoNum + 20]
+      );
+      console.log('Fallback results:', fallbackRows);
+      res.json(fallbackRows.length > 0 ? fallbackRows : rows);
+    } else {
+      console.log('Search query results:', rows);
+      res.json(rows);
+    }
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

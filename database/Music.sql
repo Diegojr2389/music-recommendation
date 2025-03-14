@@ -131,9 +131,9 @@ CREATE TABLE SONG_ALBUM (
 );
 
 -- Insert into ARTIST Table
-INSERT INTO ARTIST (Artist_ID, A_Name, A_DOB, DebutDate, Nationality, A_Genre, Released_Albums) 
-VALUES 
-('artist1', 'The Beatles', '1940-10-09', '1960-01-01', 'UK', 'Rock', 13),
+INSERT INTO ARTIST (Artist_ID, A_Name, A_DOB, DebutDate, Nationality, A_Genre, Released_Albums)
+VALUES
+('artist1', 'The Beatles', '1900-01-01', '1960-01-01', 'UK', 'Rock', 13),
 ('artist2', 'Taylor Swift', '1989-12-13', '2006-10-24', 'USA', 'Pop', 10),
 ('artist3', 'Eminem', '1972-10-17', '1996-11-12', 'USA', 'Hip-Hop', 11),
 ('artist4', 'Drake', '1986-10-24', '2009-06-15', 'Canada', 'Hip-Hop', 8),
@@ -142,41 +142,152 @@ VALUES
 ('artist7', 'Beyoncé', '1981-09-04', '1997-10-05', 'USA', 'R&B', 7),
 ('artist8', 'Kanye West', '1977-06-08', '2004-02-10', 'USA', 'Hip-Hop', 11),
 ('artist9', 'Bruno Mars', '1985-10-08', '2010-07-20', 'USA', 'Pop', 4),
-('artist10', 'Coldplay', '1977-03-02', '1996-01-01', 'UK', 'Alternative', 9),
+('artist10', 'Coldplay', '1900-01-01', '1996-01-01', 'UK', 'Alternative', 9),
 ('artist11', 'The Weeknd', '1990-02-16', '2013-01-01', 'Canada', 'R&B', 5),
 ('artist12', 'Billie Eilish', '2001-12-18', '2017-11-17', 'USA', 'Alternative', 2),
-('artist13', 'Imagine Dragons', '1987-06-15', '2012-09-04', 'USA', 'Alternative', 4),
+('artist13', 'Imagine Dragons', '1900-01-01', '2012-09-04', 'USA', 'Alternative', 4),
 ('artist14', 'Rihanna', '1988-02-20', '2005-05-30', 'Barbados', 'R&B', 8),
 ('artist15', 'Justin Bieber', '1994-03-01', '2009-11-17', 'Canada', 'Pop', 6),
 ('artist16', 'Ariana Grande', '1993-06-26', '2013-09-03', 'USA', 'Pop', 6),
 ('artist17', 'Post Malone', '1995-07-04', '2015-02-04', 'USA', 'Hip-Hop', 4),
 ('artist18', 'Shawn Mendes', '1998-08-08', '2014-04-14', 'Canada', 'Pop', 4),
 ('artist19', 'Dua Lipa', '1995-08-22', '2015-08-21', 'UK', 'Pop', 3),
-('artist20', 'Harry Styles', '1994-02-01', '2017-05-12', 'UK', 'Pop', 3);
+('artist20', 'Harry Styles', '1994-02-01', '2017-05-12', 'UK', 'Pop', 3),
+('artist21', 'Lady Gaga', '1986-03-28', '2008-08-19', 'USA', 'Pop', 7),
+('artist22', 'Kendrick Lamar', '1987-06-17', '2011-07-02', 'USA', 'Hip-Hop', 5),
+('artist23', 'Sabrina Carpenter', '1999-05-11', '2015-04-14', 'USA', 'Pop', 5),
+('artist24', 'Chappell Roan', '1998-02-19', '2023-09-22', 'USA', 'Pop', 1),
+('artist25', 'Doechii', '1992-10-21', '2018-08-31', 'USA', 'Hip-Hop', 1),
+('artist26', 'Katy Perry', '1984-10-25', '2008-06-17', 'USA', 'Pop', 6),
+('artist27', 'Nicki Minaj', '1982-12-08', '2010-11-22', 'Trinidad and Tobago', 'Hip-Hop', 5),
+('artist28', 'Jay-Z', '1969-12-04', '1996-06-25', 'USA', 'Hip-Hop', 14),
+('artist29', 'Alicia Keys', '1981-01-25', '2001-06-05', 'USA', 'R&B', 8),
+('artist30', 'Maroon 5', '1900-01-01', '2002-06-25', 'USA', 'Pop', 7),
+('artist31', 'SZA', '1989-11-08', '2012-10-29', 'USA', 'R&B', 2),
+('artist32', 'Lil Wayne', '1982-09-27', '1999-11-02', 'USA', 'Hip-Hop', 13),
+('artist33', 'Miley Cyrus', '1992-11-23', '2007-06-26', 'USA', 'Pop', 7),
+('artist34', 'Sam Smith', '1992-05-19', '2014-05-26', 'UK', 'Pop', 4),
+('artist35', 'Calvin Harris', '1984-01-17', '2007-06-15', 'UK', 'Electronic', 5),
+('artist36', 'Cardi B', '1992-10-11', '2017-06-16', 'USA', 'Hip-Hop', 1),
+('artist37', 'Megan Thee Stallion', '1995-02-15', '2019-05-17', 'USA', 'Hip-Hop', 2),
+('artist38', 'Lana Del Rey', '1985-06-21', '2012-01-27', 'USA', 'Alternative', 9),
+('artist39', 'J. Cole', '1985-01-28', '2011-11-01', 'USA', 'Hip-Hop', 6),
+('artist40', 'Olivia Rodrigo', '2003-02-20', '2021-01-08', 'USA', 'Pop', 2),
+('artist41', 'Red Hot Chili Peppers', '1900-01-01', '1984-08-10', 'USA', 'Rock', 13),
+('artist42', 'Foo Fighters', '1900-01-01', '1995-07-04', 'USA', 'Rock', 11),
+('artist43', 'Linkin Park', '1900-01-01', '2000-10-24', 'USA', 'Alternative', 7),
+('artist44', 'Green Day', '1900-01-01', '1987-01-01', 'USA', 'Punk Rock', 14),
+('artist45', 'Metallica', '1900-01-01', '1983-07-25', 'USA', 'Metal', 10),
+('artist46', 'Nirvana', '1900-01-01', '1989-06-15', 'USA', 'Grunge', 3),
+('artist47', 'Guns N'' Roses', '1900-01-01', '1987-07-21', 'USA', 'Rock', 6),
+('artist48', 'Queen', '1900-01-01', '1973-07-13', 'UK', 'Rock', 15),
+('artist49', 'The Rolling Stones', '1900-01-01', '1962-01-01', 'UK', 'Rock', 30),
+('artist50', 'Pink Floyd', '1900-01-01', '1967-08-05', 'UK', 'Rock', 15),
+('artist51', 'Elton John', '1947-03-25', '1969-10-27', 'UK', 'Pop', 31),
+('artist52', 'David Bowie', '1947-01-08', '1967-06-01', 'UK', 'Rock', 27),
+('artist53', 'Madonna', '1958-08-16', '1983-07-27', 'USA', 'Pop', 14),
+('artist54', 'Michael Jackson', '1958-08-29', '1971-01-07', 'USA', 'Pop', 10),
+('artist55', 'Prince', '1958-06-07', '1978-04-07', 'USA', 'Funk', 39),
+('artist56', 'Bob Dylan', '1941-05-24', '1962-03-19', 'USA', 'Folk', 39),
+('artist57', 'Bruce Springsteen', '1949-09-23', '1973-01-05', 'USA', 'Rock', 21),
+('artist58', 'Whitney Houston', '1963-08-09', '1985-02-14', 'USA', 'R&B', 7),
+('artist59', 'Mariah Carey', '1969-03-27', '1990-06-12', 'USA', 'R&B', 15),
+('artist60', 'Celine Dion', '1968-03-30', '1990-11-09', 'Canada', 'Pop', 27),
+('artist61', 'Frank Sinatra', '1915-12-12', '1939-01-01', 'USA', 'Jazz', 59),
+('artist62', 'Aretha Franklin', '1942-03-25', '1961-01-10', 'USA', 'Soul', 38),
+('artist63', 'Stevie Wonder', '1950-05-13', '1962-11-01', 'USA', 'Soul', 27),
+('artist64', 'James Brown', '1933-05-03', '1956-03-01', 'USA', 'Funk', 37),
+('artist65', 'Marvin Gaye', '1939-04-02', '1961-06-01', 'USA', 'Soul', 25),
+('artist66', 'Tina Turner', '1939-11-26', '1960-01-01', 'USA', 'Rock', 10),
+('artist67', 'Diana Ross', '1944-03-26', '1961-01-01', 'USA', 'R&B', 25),
+('artist68', 'Patti LaBelle', '1944-05-24', '1962-01-01', 'USA', 'R&B', 20),
+('artist69', 'Janet Jackson', '1966-05-16', '1982-09-21', 'USA', 'R&B', 11),
+('artist70', 'Usher', '1978-10-14', '1994-08-30', 'USA', 'R&B', 9),
+('artist71', 'Chris Brown', '1989-05-05', '2005-11-29', 'USA', 'R&B', 11),
+('artist72', 'Ne-Yo', '1979-10-18', '2006-02-28', 'USA', 'R&B', 8),
+('artist73', 'Trey Songz', '1984-11-28', '2005-07-26', 'USA', 'R&B', 7),
+('artist74', 'John Legend', '1978-12-28', '2004-12-28', 'USA', 'R&B', 8),
+('artist75', 'Alicia Keys', '1981-01-25', '2001-06-05', 'USA', 'R&B', 8),
+('artist76', 'T-Pain', '1985-09-30', '2005-12-06', 'USA', 'R&B', 6),
+('artist77', '50 Cent', '1975-07-06', '2003-02-06', 'USA', 'Hip-Hop', 5),
+('artist78', 'Snoop Dogg', '1971-10-20', '1993-11-23', 'USA', 'Hip-Hop', 19),
+('artist79', 'Nas', '1973-09-14', '1994-04-19', 'USA', 'Hip-Hop', 14),
+('artist80', 'Ice Cube', '1969-06-15', '1990-05-16', 'USA', 'Hip-Hop', 10),
+('artist81', 'OutKast', '1900-01-01', '1994-04-26', 'USA', 'Hip-Hop', 6),
+('artist82', 'Wu-Tang Clan', '1900-01-01', '1993-11-09', 'USA', 'Hip-Hop', 8),
+('artist83', 'A Tribe Called Quest', '1900-01-01', '1990-04-10', 'USA', 'Hip-Hop', 6),
+('artist84', 'Run-DMC', '1900-01-01', '1984-03-27', 'USA', 'Hip-Hop', 7),
+('artist85', 'Public Enemy', '1900-01-01', '1987-02-10', 'USA', 'Hip-Hop', 15),
+('artist86', 'The Notorious B.I.G.', '1972-05-21', '1994-09-13', 'USA', 'Hip-Hop', 2),
+('artist87', 'Tupac Shakur', '1971-06-16', '1991-11-12', 'USA', 'Hip-Hop', 7),
+('artist88', 'LL Cool J', '1968-01-14', '1985-11-18', 'USA', 'Hip-Hop', 13),
+('artist89', 'DMX', '1970-12-18', '1998-05-12', 'USA', 'Hip-Hop', 8),
+('artist90', 'Future', '1983-11-20', '2012-04-16', 'USA', 'Hip-Hop', 9),
+('artist91', 'Travis Scott', '1991-04-30', '2015-09-04', 'USA', 'Hip-Hop', 4),
+('artist92', '21 Savage', '1992-10-22', '2016-07-15', 'UK', 'Hip-Hop', 3),
+('artist93', 'Lil Uzi Vert', '1994-07-31', '2015-11-13', 'USA', 'Hip-Hop', 3),
+('artist94', 'Young Thug', '1991-08-16', '2014-04-24', 'USA', 'Hip-Hop', 2),
+('artist95', 'Gunna', '1993-06-14', '2018-05-11', 'USA', 'Hip-Hop', 3),
+('artist96', 'Doja Cat', '1995-10-21', '2018-03-30', 'USA', 'Pop', 4),
+('artist97', 'Lizzo', '1988-04-27', '2013-10-15', 'USA', 'Pop', 3),
+('artist98', 'Halsey', '1994-09-29', '2015-08-28', 'USA', 'Alternative', 4),
+('artist99', 'Tame Impala', '1900-01-01', '2010-05-21', 'Australia', 'Alternative', 4),
+('artist100', 'The Killers', '1900-01-01', '2004-06-07', 'USA', 'Alternative', 7);
 
+-- Insert into SONG Table
 -- Insert into SONG Table
 INSERT INTO SONG (Song_ID, Artist_ID, SongTitle, S_Duration, S_Genre, Mood, Tempo, S_ReleasedDate, Streams) 
 VALUES 
-('song1', 'artist1', 'Hey Jude', 431, 'Rock', 'Emotional', 72, '1968-08-26', 1500000000),
-('song2', 'artist2', 'Shake It Off', 219, 'Pop', 'Upbeat', 160, '2014-08-18', 3500000000),
-('song3', 'artist3', 'Lose Yourself', 326, 'Hip-Hop', 'Motivational', 171, '2002-10-28', 2200000000),
-('song4', 'artist4', 'God’s Plan', 198, 'Hip-Hop', 'Chill', 77, '2018-01-19', 2000000000),
-('song5', 'artist5', 'Rolling in the Deep', 228, 'Soul', 'Powerful', 105, '2010-11-29', 2800000000),
-('song6', 'artist6', 'Shape of You', 233, 'Pop', 'Romantic', 92, '2017-01-06', 4500000000),
-('song7', 'artist7', 'Halo', 261, 'R&B', 'Uplifting', 88, '2008-01-20', 2300000000),
-('song8', 'artist8', 'Stronger', 311, 'Hip-Hop', 'Energetic', 128, '2007-09-10', 1800000000),
-('song9', 'artist9', 'Uptown Funk', 270, 'Pop', 'Funky', 115, '2014-11-10', 3700000000),
-('song10', 'artist10', 'Yellow', 269, 'Alternative', 'Melancholy', 77, '2000-06-26', 1600000000),
-('song11', 'artist11', 'Blinding Lights', 200, 'R&B', 'Energetic', 171, '2019-11-29', 4200000000),
-('song12', 'artist12', 'Bad Guy', 194, 'Alternative', 'Playful', 135, '2019-03-29', 3400000000),
-('song13', 'artist13', 'Radioactive', 186, 'Alternative', 'Dark', 135, '2012-10-29', 1900000000),
-('song14', 'artist14', 'Umbrella', 260, 'R&B', 'Cool', 120, '2007-03-29', 3200000000),
-('song15', 'artist15', 'Love Yourself', 233, 'Pop', 'Reflective', 100, '2015-11-09', 2400000000),
-('song16', 'artist16', 'Into You', 247, 'Pop', 'Seductive', 110, '2016-05-06', 1900000000),
-('song17', 'artist17', 'Circles', 215, 'Hip-Hop', 'Relaxing', 120, '2019-08-30', 2200000000),
-('song18', 'artist18', 'Stitches', 206, 'Pop', 'Heartfelt', 87, '2015-03-17', 1800000000),
-('song19', 'artist19', 'Don’t Start Now', 183, 'Pop', 'Energetic', 124, '2019-10-31', 2900000000),
-('song20', 'artist20', 'Watermelon Sugar', 174, 'Pop', 'Summery', 110, '2019-11-16', 2600000000);
+('song1', 'artist1', 'Hey Jude', 431, 'Rock', 'Emotional', 72, '1968-08-26', 521636),
+('song2', 'artist2', 'Shake It Off', 219, 'Pop', 'Upbeat', 160, '2014-08-18', 303549),
+('song3', 'artist3', 'Lose Yourself', 326, 'Hip-Hop', 'Motivational', 171, '2002-10-28', 10466123),
+('song4', 'artist4', 'God’s Plan', 198, 'Hip-Hop', 'Chill', 77, '2018-01-19', 5410814),
+('song5', 'artist5', 'Rolling in the Deep', 228, 'Soul', 'Powerful', 105, '2010-11-29', 830109),
+('song6', 'artist6', 'Shape of You', 233, 'Pop', 'Romantic', 92, '2017-01-06', 16262709),
+('song7', 'artist7', 'Halo', 261, 'R&B', 'Uplifting', 88, '2008-01-20', 10844184),
+('song8', 'artist8', 'Stronger', 311, 'Hip-Hop', 'Energetic', 128, '2007-09-10', 1375309),
+('song9', 'artist9', 'Uptown Funk', 270, 'Pop', 'Funky', 115, '2014-11-10', 8321451),
+('song10', 'artist10', 'Yellow', 269, 'Alternative', 'Melancholy', 77, '2000-06-26', 3596727),
+('song11', 'artist11', 'Blinding Lights', 200, 'R&B', 'Energetic', 171, '2019-11-29', 14580737),
+('song12', 'artist12', 'Bad Guy', 194, 'Alternative', 'Playful', 135, '2019-03-29', 3617941),
+('song13', 'artist13', 'Radioactive', 186, 'Alternative', 'Dark', 135, '2012-10-29', 14179838),
+('song14', 'artist14', 'Umbrella', 260, 'R&B', 'Cool', 120, '2007-03-29', 3069826),
+('song15', 'artist15', 'Love Yourself', 233, 'Pop', 'Reflective', 100, '2015-11-09', 758963),
+('song16', 'artist16', 'Into You', 247, 'Pop', 'Seductive', 110, '2016-05-06', 8664572),
+('song17', 'artist17', 'Circles', 215, 'Hip-Hop', 'Relaxing', 120, '2019-08-30', 5755504),
+('song18', 'artist18', 'Stitches', 206, 'Pop', 'Heartfelt', 87, '2015-03-17', 7496875),
+('song19', 'artist19', 'Don’t Start Now', 183, 'Pop', 'Energetic', 124, '2019-10-31', 4978696),
+('song20', 'artist20', 'Watermelon Sugar', 174, 'Pop', 'Summery', 110, '2019-11-16', 6301947),
+('song21', 'artist1', 'Let It Be', 243, 'Rock', 'Hopeful', 70, '1970-03-06', 451236),
+('song22', 'artist2', 'Love Story', 234, 'Pop', 'Romantic', 120, '2008-09-12', 275491),
+('song23', 'artist3', 'Stan', 399, 'Hip-Hop', 'Dark', 80, '2000-11-21', 892341),
+('song24', 'artist4', 'Hotline Bling', 264, 'Hip-Hop', 'Smooth', 100, '2015-07-31', 481029),
+('song25', 'artist5', 'Someone Like You', 281, 'Soul', 'Sad', 135, '2011-01-24', 720584),
+('song26', 'artist6', 'Perfect', 263, 'Pop', 'Romantic', 95, '2017-11-20', 1384502),
+('song27', 'artist7', 'Single Ladies', 199, 'R&B', 'Empowering', 144, '2008-10-13', 947632),
+('song28', 'artist8', 'Gold Digger', 227, 'Hip-Hop', 'Catchy', 92, '2005-08-08', 1156723),
+('song29', 'artist9', 'Treasure', 179, 'Pop', 'Funky', 116, '2013-05-10', 694125),
+('song30', 'artist10', 'Viva La Vida', 242, 'Alternative', 'Epic', 138, '2008-05-27', 832147),
+('song31', 'artist11', 'Starboy', 231, 'R&B', 'Energetic', 186, '2016-09-22', 1264839),
+('song32', 'artist12', 'Everything I Wanted', 248, 'Alternative', 'Melancholy', 120, '2019-11-13', 304571),
+('song33', 'artist13', 'Demons', 173, 'Alternative', 'Dark', 90, '2013-02-25', 715892),
+('song34', 'artist14', 'Diamonds', 223, 'R&B', 'Uplifting', 92, '2012-11-27', 583920),
+('song35', 'artist15', 'Sorry', 201, 'Pop', 'Apologetic', 100, '2015-10-22', 649872),
+('song36', 'artist16', 'Thank U, Next', 199, 'Pop', 'Grateful', 120, '2018-11-03', 1123456),
+('song37', 'artist17', 'Sunflower', 164, 'Hip-Hop', 'Lighthearted', 100, '2018-10-09', 789123),
+('song38', 'artist18', 'Treat You Better', 187, 'Pop', 'Protective', 108, '2016-06-03', 654321),
+('song39', 'artist19', 'New Rules', 211, 'Pop', 'Empowering', 116, '2017-07-07', 483920),
+('song40', 'artist20', 'Adore You', 201, 'Pop', 'Romantic', 99, '2019-12-06', 571234),
+('song41', 'artist1', 'Yesterday', 125, 'Rock', 'Nostalgic', 85, '1965-09-13', 392147),
+('song42', 'artist2', 'Blank Space', 223, 'Pop', 'Sassy', 140, '2014-11-10', 298765),
+('song43', 'artist3', 'Rap God', 361, 'Hip-Hop', 'Fast', 148, '2013-10-15', 1045892),
+('song44', 'artist4', 'One Dance', 173, 'Hip-Hop', 'Danceable', 92, '2016-04-05', 682391),
+('song45', 'artist5', 'Make You Feel My Love', 193, 'Soul', 'Tender', 78, '2008-01-27', 503492),
+('song46', 'artist6', 'Thinking Out Loud', 285, 'Pop', 'Romantic', 79, '2014-10-20', 1254789),
+('song47', 'artist7', 'Crazy in Love', 234, 'R&B', 'Passionate', 99, '2003-05-14', 892341),
+('song48', 'artist8', 'Heartless', 217, 'Hip-Hop', 'Emotional', 85, '2008-11-04', 743920),
+('song49', 'artist9', '24K Magic', 223, 'Pop', 'Funky', 107, '2016-10-07', 694125),
+('song50', 'artist10', 'Clocks', 313, 'Alternative', 'Atmospheric', 130, '2002-03-25', 571234);
 
 -- Insert into ALBUM Table
 INSERT INTO ALBUM (AlbumName, Artist_ID, AL_ReleasedDate, Top_Song, NumOfSongs, AL_Duration) 
@@ -314,27 +425,37 @@ INSERT INTO REFERENCE (Rec_ID, Song_ID, Artist_ID, U_Name) VALUES
 ('rec19', 'song19', 'artist19', 'user9'),
 ('rec20', 'song20', 'artist20', 'user10');
 
-INSERT INTO LISTEN (Song_ID, Artist_ID, U_Name) VALUES 
-('song1', 'artist1', 'user1'),
-('song2', 'artist2', 'user2'),
-('song3', 'artist3', 'user3'),
-('song4', 'artist4', 'user4'),
-('song5', 'artist5', 'user5'),
-('song6', 'artist6', 'user6'),
-('song7', 'artist7', 'user7'),
-('song8', 'artist8', 'user8'),
-('song9', 'artist9', 'user9'),
-('song10', 'artist10', 'user10'),
-('song11', 'artist11', 'user1'),
-('song12', 'artist12', 'user2'),
-('song13', 'artist13', 'user3'),
-('song14', 'artist14', 'user4'),
-('song15', 'artist15', 'user5'),
-('song16', 'artist16', 'user6'),
-('song17', 'artist17', 'user7'),
-('song18', 'artist18', 'user8'),
-('song19', 'artist19', 'user9'),
-('song20', 'artist20', 'user10');
+INSERT INTO LISTEN (Song_ID, Artist_ID, U_Name) VALUES
+('song1', 'artist1', 'user1'),    -- Listened
+('song21', 'artist1', 'user1'),   -- Listened
+('song2', 'artist2', 'user2'),    -- Listened
+('song22', 'artist2', 'user2'),   -- Listened
+('song3', 'artist3', 'user3'),    -- Listened
+('song23', 'artist3', 'user3'),   -- Listened
+('song4', 'artist4', 'user4'),    -- Listened
+('song24', 'artist4', 'user4'),   -- Listened
+('song5', 'artist5', 'user5'),    -- Listened
+('song25', 'artist5', 'user5'),   -- Listened
+('song6', 'artist6', 'user6'),    -- Listened
+('song26', 'artist6', 'user6'),   -- Listened
+('song7', 'artist7', 'user7'),    -- Listened
+('song27', 'artist7', 'user7'),   -- Listened
+('song8', 'artist8', 'user8'),    -- Listened
+('song28', 'artist8', 'user8'),   -- Listened
+('song9', 'artist9', 'user9'),    -- Listened
+('song29', 'artist9', 'user9'),   -- Listened
+('song10', 'artist10', 'user10'), -- Listened
+('song30', 'artist10', 'user10'), -- Listened
+('song11', 'artist11', 'user1'),  -- Listened
+('song12', 'artist12', 'user2'),  -- Listened
+('song13', 'artist13', 'user3'),  -- Listened
+('song14', 'artist14', 'user4'),  -- Listened
+('song15', 'artist15', 'user5'),  -- Listened
+('song16', 'artist16', 'user6'),  -- Listened
+('song17', 'artist17', 'user7'),  -- Listened
+('song18', 'artist18', 'user8'),  -- Listened
+('song19', 'artist19', 'user9'),  -- Listened
+('song20', 'artist20', 'user10'); -- Listened
 
 INSERT INTO PLAYLIST_SONG (PlaylistName, Song_ID, Artist_ID, U_Name) VALUES 
 ('Rock Legends', 'song1', 'artist1', 'user1'),
@@ -358,24 +479,34 @@ INSERT INTO PLAYLIST_SONG (PlaylistName, Song_ID, Artist_ID, U_Name) VALUES
 ('Reggae Rhythm', 'song19', 'artist19', 'user9'),
 ('Latin Fiesta', 'song20', 'artist20', 'user10');
 
-INSERT INTO SONG_ALBUM (AlbumName, Artist_ID, Song_ID) VALUES 
-('Abbey Road', 'artist1', 'song1'),
-('1989', 'artist2', 'song2'),
-('The Eminem Show', 'artist3', 'song3'),
-('Scorpion', 'artist4', 'song4'),
-('21', 'artist5', 'song5'),
-('Revolution', 'artist6', 'song6'),
-('Evolve', 'artist7', 'song7'),
-('Infinite', 'artist8', 'song8'),
-('Mirage', 'artist9', 'song9'),
-('Odyssey', 'artist10', 'song10'),
-('Serenity', 'artist11', 'song11'),
-('Eclipse', 'artist12', 'song12'),
-('Fusion', 'artist13', 'song13'),
-('Renaissance', 'artist14', 'song14'),
-('Horizon', 'artist15', 'song15'),
-('Momentum', 'artist16', 'song16'),
-('Rebirth', 'artist17', 'song17'),
-('Pulse', 'artist18', 'song18'),
-('Vibes', 'artist19', 'song19'),
-('Echoes', 'artist20', 'song20');
+INSERT INTO SONG_ALBUM (AlbumName, Artist_ID, Song_ID) VALUES
+('Abbey Road', 'artist1', 'song21'),
+('1989', 'artist2', 'song22'),
+('The Eminem Show', 'artist3', 'song23'),
+('Scorpion', 'artist4', 'song24'),
+('21', 'artist5', 'song25'),
+('Revolution', 'artist6', 'song26'),
+('Evolve', 'artist7', 'song27'),
+('Infinite', 'artist8', 'song28'),
+('Mirage', 'artist9', 'song29'),
+('Odyssey', 'artist10', 'song30'),
+('Serenity', 'artist11', 'song31'),
+('Eclipse', 'artist12', 'song32'),
+('Fusion', 'artist13', 'song33'),
+('Renaissance', 'artist14', 'song34'),
+('Horizon', 'artist15', 'song35'),
+('Momentum', 'artist16', 'song36'),
+('Rebirth', 'artist17', 'song37'),
+('Pulse', 'artist18', 'song38'),
+('Vibes', 'artist19', 'song39'),
+('Echoes', 'artist20', 'song40'),
+('Abbey Road', 'artist1', 'song41'),
+('1989', 'artist2', 'song42'),
+('The Eminem Show', 'artist3', 'song43'),
+('Scorpion', 'artist4', 'song44'),
+('21', 'artist5', 'song45'),
+('Revolution', 'artist6', 'song46'),
+('Evolve', 'artist7', 'song47'),
+('Infinite', 'artist8', 'song48'),
+('Mirage', 'artist9', 'song49'),
+('Odyssey', 'artist10', 'song50');

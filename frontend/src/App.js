@@ -13,14 +13,19 @@ function App() {
   const [searchMood, setSearchMood] = useState('');
   const [searchMinTempo, setSearchMinTempo] = useState('');
   const [searchMaxTempo, setSearchMaxTempo] = useState('');
-  const [newSong, setNewSong] = useState({ Song_ID: '', Artist_ID: '', SongTitle: '', S_Duration: '', S_Genre: '', Mood: '', Tempo: '', S_ReleasedDate: '', Streams: '' });
+  const [newSong, setNewSong] = useState({
+    Song_ID: '', Artist_ID: '', SongTitle: '', S_Duration: '', S_Genre: '', Mood: '', Tempo: '', S_ReleasedDate: '', Streams: ''
+  });
   const [listeningTime, setListeningTime] = useState({ U_Name: '', Behavior_ID: '', AdditionalTime: '' });
   const [deleteSongId, setDeleteSongId] = useState('');
   const [deleteArtistId, setDeleteArtistId] = useState('');
-  const [fetchMessage, setFetchMessage] = useState(''); // New state for fetch feedback
+  const [fetchMessage, setFetchMessage] = useState(''); // For fetch feedback
+  const [loading, setLoading] = useState(false); // New loading state
 
-  // Fetch Last.fm Songs (New)
+  // Fetch Last.fm Songs
   const handleFetchLastFm = () => {
+    setLoading(true); // Start loading
+    setFetchMessage(''); // Clear previous message
     axios.get('http://localhost:5000/fetch-lastfm')
       .then(response => {
         console.log('Fetch Result:', response.data);
@@ -29,6 +34,9 @@ function App() {
       .catch(error => {
         console.error('Error fetching Last.fm songs:', error);
         setFetchMessage('Error fetching songs: ' + error.message);
+      })
+      .finally(() => {
+        setLoading(false); // Stop loading regardless of success or failure
       });
   };
 
@@ -85,6 +93,8 @@ function App() {
 
   // Search Songs by Mood and Tempo
   const handleSearchSongs = () => {
+    setLoading(true);
+    console.log('Search params:', { mood: searchMood, minTempo: searchMinTempo, maxTempo: searchMaxTempo });
     axios.get('http://localhost:5000/search-songs', {
       params: { mood: searchMood, minTempo: searchMinTempo, maxTempo: searchMaxTempo }
     })
@@ -92,7 +102,8 @@ function App() {
         console.log('Search Results:', response.data);
         setSearchResults(response.data);
       })
-      .catch(error => console.error('Error searching songs:', error));
+      .catch(error => console.error('Error searching songs:', error))
+      .finally(() => setLoading(false));
   };
 
   // Add a Song
@@ -138,10 +149,11 @@ function App() {
         />
       </div>
 
-      {/* Fetch Last.fm Songs (New) */}
+      {/* Fetch Last.fm Songs */}
       <div>
         <h2>Fetch Last.fm Songs</h2>
         <button onClick={handleFetchLastFm}>Fetch Last.fm Songs</button>
+        {loading && <p>Loading... One moment please</p>} {/* Show loading message */}
         <p>{fetchMessage || 'Click to fetch top tracks from Last.fm'}</p>
       </div>
 
